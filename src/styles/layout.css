@@ -1,0 +1,80 @@
+/* ── The core mechanic: tall wrapper + CSS sticky. Never pin. ──────────────────────
+   The wrapper's height is the scroll distance; the sticky screen is compositor-only
+   and never touches document flow, so there is no pin-spacer and no boundary jitter. */
+.scroll-area { position: relative; }
+.scroll-area__screen {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  overflow: clip; /* clip, not hidden: focus can never scroll a sticky screen sideways */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js .scroll-area__screen { position: sticky; top: 0; }
+  html.js .hero__area { height: 280vh; }
+  html.js .quote-area { height: 200vh; }
+  html.js .valley-area { height: 200vh; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 992px) {
+  html.js .hero__area { height: 400vh; } /* the dome overlaps its last 100vh */
+  html.js .quote-area { height: 240vh; }
+  html.js .valley-area { height: 260vh; }
+  html.js .amen-area { height: 285vh; }
+  html.js .arch-area { height: 190vh; }
+}
+
+/* Every scaled or parallaxed layer gets its own compositor layer (GSAP also sets z:10). */
+[data-parallax]:not([data-parallax="w"]),
+.hero__bg, .hero__frame, .amen-grid, .arch-frame, .interiors, .zoom,
+.dome__disc, .quote__img, .valley__img, .valley__cloud, .slider__slide {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ── Page stack: the page becomes a card that the footer rises behind ─────────── */
+.page-stack { position: relative; background: var(--plum); }
+.page {
+  position: relative;
+  z-index: 2;
+  background: var(--paper);
+}
+/* JS writes --page-top = viewport height − page height, so the page sticks with its
+   bottom edge on the viewport's bottom edge while the footer scrolls in beneath. */
+html.js .page.is-measured { position: sticky; top: var(--page-top); }
+
+/* The page sticks over this spacer while it shrinks into a card, then the whole stack
+   scrolls on and the footer follows beneath it. */
+.footer-spacer { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  html.js .footer-spacer { display: block; height: 100vh; height: 100svh; }
+}
+
+/* ── Generic media frames ─────────────────────────────────────────────────────── */
+.media { position: relative; overflow: hidden; }
+.px { position: absolute; left: 0; width: 100%; }
+.px--img { top: -25%; height: 150%; }
+[data-parallax="img-out"] { top: -25%; height: 125%; }
+[data-parallax="img-in"] { top: 0; height: 125%; }
+.px picture, .zoom picture { width: 100%; height: 100%; }
+.zoom { position: absolute; inset: 0; }
+
+.video-toggle {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 2;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background: var(--paper-60);
+  color: var(--ink);
+  backdrop-filter: blur(6px);
+  transition: background-color var(--dur-s) var(--ease-out);
+}
+.video-toggle:hover { background: var(--blush); }
+
+/* While ScrollTrigger measures, every sticky layer is released so trigger positions are
+   computed against natural flow — never against wherever a sticky layer happens to sit. */
+html.st-refresh .scroll-area__screen,
+html.st-refresh .loc-screen,
+html.st-refresh .page.is-measured { position: relative !important; top: auto !important; }

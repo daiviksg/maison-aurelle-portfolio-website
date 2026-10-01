@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maison Aurelle — Twelve residences on the lake</title>
+  <meta name="description" content="Maison Aurelle: twelve lakeside residences in stone, oak and lime at Aurelle-sur-Lac. Private viewings by appointment.">
+  <meta name="theme-color" content="#340C24">
+  <meta property="og:title" content="Maison Aurelle">
+  <meta property="og:description" content="Twelve residences on the lake at Aurelle-sur-Lac.">
+  <meta property="og:image" content="/media/img/og.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- JS confirms itself before anything is hidden. If the module never boots, the
+       watchdog removes the class and every piece of content stays visible. -->
+  <script>
+    document.documentElement.classList.add("js");
+    // The film always starts at the first frame: never restore an old scroll position.
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.__bootWatchdog = setTimeout(function () {
+      document.documentElement.classList.remove("js");
+      document.documentElement.classList.add("no-boot");
+    }, 8000);
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Bodoni+Moda:opsz,wght@6..96,400&family=Pinyon+Script&display=swap">
+  <link rel="preload" as="image" type="image/avif"
+        imagesrcset="/media/img/hero-640.avif 640w, /media/img/hero-1024.avif 1024w, /media/img/hero-1600.avif 1600w, /media/img/hero-2400.avif 2400w, /media/img/hero-3840.avif 3840w"
+        imagesizes="100vw" fetchpriority="high">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ───────────── Fixed UI ───────────── -->
+  <header class="ui">
+    <a class="ui-mark theme_on-dark" href="#top" data-theme aria-label="Maison Aurelle — back to top">
+      <svg class="ui-mark__svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+        <defs><path id="mark-ring" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
+        <g class="ui-mark__ring" data-mark-ring>
+          <text class="ui-mark__text"><textPath href="#mark-ring" textLength="288" lengthAdjust="spacing">MAISON AURELLE · SUR LE LAC · RESIDENCES ·</textPath></text>
+        </g>
+        <path class="ui-mark__glyph" d="M50 76V58a10 10 0 0 1 20 0v18" fill="none" stroke-width="1.5"/>
+        <circle class="ui-mark__dot" cx="60" cy="52" r="2"/>
+      </svg>
+    </a>
+
+    <nav class="ui-nav theme_on-dark" aria-label="Primary" data-theme>
+      <a class="ui-nav__feature" href="#residences"><span>Choose a</span> <span>residence</span></a>
+      <ul class="ui-nav__links">
+        <li><a class="label" href="#enquire">Book a viewing</a></li>
+        <li><a class="label" href="#location">The shore</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <aside class="ui-progress theme_on-dark" data-theme aria-label="Scroll position">
+    <span class="ui-progress__count label" aria-hidden="true"><span data-progress-count>00</span></span>
+    <div class="ui-progress__rail" data-progress-rail>
+      <span class="ui-progress__fill" aria-hidden="true"></span>
+      <button class="ui-progress__thumb" type="button" data-progress-thumb
+              aria-label="Page position 0%. Drag, or use arrow keys, Home and End."></button>
+    </div>
+  </aside>
+  <button class="ui-cue label theme_on-dark" type="button" data-theme data-scroll-cue>
+    <span class="ui-cue__text" data-cue-text>Scroll</span>
+    <span class="ui-cue__arrow" aria-hidden="true"></span>
+  </button>
+
+  <!-- ───────────── Preloader: plum curtain with an arch-shaped window ───────────── -->
+  <div class="preloader" data-preloader aria-hidden="true">
+    <span class="preloader__arch preloader__arch--outer"></span>
+    <span class="preloader__arch preloader__arch--inner"></span>
+    <svg class="preloader__frame" data-pl-frame viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="3,0 97,0 100,3 100,97 97,100 3,100 0,97 0,3" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <p class="preloader__watermark script" data-pl-watermark>Aurelle</p>
+    <svg class="preloader__glyph" viewBox="0 0 40 48" data-pl-glyph>
+      <path d="M4 46V20a16 16 0 0 1 32 0v26" fill="none" stroke="currentColor" stroke-width="1"/>
+      <circle cx="20" cy="14" r="1.6" fill="currentColor"/>
+    </svg>
+    <div class="preloader__lockup">
+      <p class="preloader__side preloader__side--l" data-pl-side>Twelve</p>
+      <div class="preloader__title">
+        <p class="display preloader__name" data-pl-name><span>Maison</span> <span>Aurelle</span></p>
+        <p class="script preloader__script" data-pl-script>sur-le-Lac</p>
+      </div>
+      <p class="preloader__side preloader__side--r" data-pl-side>Houses</p>
+    </div>
+    <span class="preloader__line"><span data-pl-bar></span></span>
+    <p class="preloader__tag label" data-pl-sub>Maison Aurelle<br>A house that keeps still.</p>
+  </div>
+
+  <div class="page-stack">
+    <div class="page" data-page-clip>
+      <main id="main" tabindex="-1">
+
+        <!-- 5.1 HERO — the dive -->
+        <section class="hero" id="top" data-bg="dark" aria-labelledby="hero-title">
+          <div class="scroll-area hero__area" data-hero-area>
+            <div class="scroll-area__screen">
+              <div class="hero__frame" data-hero-frame>
+                <div class="hero__bg" data-hero-bg>
+                  <div class="hero__plate">
+                    <x-img name="hero" priority sizes="100vw" class="cover" data-hero-img
+                           alt="A long, low house of pale stone on the edge of a still alpine lake under a clear sky"></x-img>
+                  </div>
+                  <div class="hero__plate hero__plate--night" data-hero-night>
+                    <x-img name="hero-night" sizes="100vw" class="cover"
+                           alt="The same house at night, its windows lit amber and mirrored in the dark water"></x-img>
+                  </div>
+                  <ul class="hotspots" data-hotspots>
+                    <li style="--x: 34%; --y: 64%"><button class="hotspot" type="button" aria-describedby="hs-1"><span class="visually-hidden">Principal terrace</span></button><span class="hotspot__tip label" id="hs-1" role="tooltip">Principal terrace · 60 m²</span></li>
+                    <li style="--x: 57%; --y: 70%"><button class="hotspot" type="button" aria-describedby="hs-2"><span class="visually-hidden">The boathouse</span></button><span class="hotspot__tip label" id="hs-2" role="tooltip">The boathouse · below the bank</span></li>
+                    <li style="--x: 76%; --y: 60%"><button class="hotspot" type="button" aria-describedby="hs-3"><span class="visually-hidden">Ridge residences</span></button><span class="hotspot__tip label" id="hs-3" role="tooltip">Ridge residences · 38 m above</span></li>
+                  </ul>
+                </div>
+                <div class="hero__shade" aria-hidden="true"></div>
+              </div>
+              <div class="hero__content" data-hero-content data-reveal="w">
+                <p class="hero__side hero__side--l display" data-reveal="ctn">A house</p>
+                <div class="hero__title-wrap">
+                  <h1 id="hero-title" class="display hero__title" data-reveal="a">Maison Aurelle</h1>
+                  <p class="script hero__script" data-reveal="ctn">sur-le-Lac</p>
+                </div>
+                <p class="hero__side hero__side--r display" data-reveal="ctn">that keeps still</p>
+                <div class="daynight label" role="group" aria-label="Show the house" data-reveal="ctn">
+                  <button type="button" aria-pressed="true" data-daynight="day">By day</button>
+                  <span class="daynight__line" aria-hidden="true"><span></span></span>
+                  <button type="button" aria-pressed="false" data-daynight="night">By night</button>
+                </div>
+              </div>
+              <a class="cta-circle hero__cta theme-paper" href="#residences" data-hero-cta>
+                <svg class="cta-circle__ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49"/><circle class="cta-circle__arc" cx="50" cy="50" r="49"/></svg>
+                <span class="label">See the residences</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dome — a sky disc rises over the hero, carrying its headline on its curve -->
+        <section class="dome" data-bg="color" aria-labelledby="dome-title" data-dome>
+          <div class="dome__disc" data-dome-disc aria-hidden="true">
+            <svg class="dome__arc" viewBox="0 0 1000 1000">
+              <path id="dome-arc" d="M 110 500 A 390 390 0 0 1 890 500" fill="none"/>
+              <text><textPath href="#dome-arc" startOffset="50%" text-anchor="middle">Three things that stay</textPath></text>
+            </svg>
+          </div>
+          <h2 id="dome-title" class="visually-hidden">Three things that stay</h2>
+          <div class="dome__inner" data-reveal="w">
+            <p class="dome__place label" data-reveal="ctn">
+              <span>Lac</span>
+              <svg viewBox="0 0 40 48" aria-hidden="true"><path d="M4 46V20a16 16 0 0 1 32 0v26" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Aurelle</span>
+            </p>
+            <span class="dome__line" data-reveal="line" aria-hidden="true"></span>
+            <p class="label dome__tag" data-reveal="ctn">A house to live in — and to come<br>back to, season after season</p>
+          </div>
+        </section>
+
+        <!-- 5.2 DISPLAY — word-spacing spread (nothing else here animates) -->
+        <section class="spread" data-bg="color" aria-labelledby="spread-title">
+          <h2 id="spread-title" class="display spread__title" data-spread>
+            <span class="spread__line">Slow light</span>
+            <span class="spread__line">Open water</span>
+            <span class="spread__line">Old stone</span>
+          </h2>
+        </section>
+
+        <!-- Concept — huge title over a small, wiping slider -->
+        <section class="concept" data-bg="color" aria-labelledby="concept-title">
+          <div data-reveal="w">
+            <h2 id="concept-title" class="display concept__title" data-reveal="h">Twelve houses</h2>
+          </div>
+          <div class="slider" data-slider role="region" aria-roledescription="carousel" aria-label="The houses in detail">
+            <div class="slider__viewport">
+              <figure class="slider__slide is-active" data-slide aria-roledescription="slide" aria-label="1 of 3">
+                <x-img name="detail-material" sizes="(min-width: 992px) 32vw, 90vw" class="cover" alt="Honed travertine meeting a strip of brushed brass above an oiled oak floor"></x-img>
+              </figure>
+              <figure class="slider__slide" data-slide aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+                <x-img name="slide-terrace" sizes="(min-width: 992px) 32vw, 90vw" class="cover" alt="A shaded stone terrace with linen seating looking across the lake to the ridge"></x-img>
+              </figure>
+              <figure class="slider__slide" data-slide aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+                <x-img name="slide-dining" sizes="(min-width: 992px) 32vw, 90vw" class="cover" alt="A long oak dining table set for supper beside a window onto the water"></x-img>
+              </figure>
+            </div>
+            <div class="slider__controls">
+              <button class="slider__btn" type="button" data-slide-prev aria-label="Previous image"><span aria-hidden="true">‹</span></button>
+              <span class="label" data-slide-current aria-hidden="true">1</span>
+              <span class="slider__track" aria-hidden="true"><span data-slide-bar></span></span>
+              <span class="label" aria-hidden="true">3</span>
+              <button class="slider__btn" type="button" data-slide-next aria-label="Next image"><span aria-hidden="true">›</span></button>
+            </div>
+            <p class="visually-hidden" aria-live="polite" data-slide-live></p>
+          </div>
+          <div class="concept__copy" data-reveal="w">
+            <p class="body" data-reveal="p">Twelve houses along four hundred metres of private shore, built around privacy, slowness and the water — and never more than twelve.</p>
+            <p class="label" data-reveal="ctn">Designed as a village,<br>not a block</p>
+          </div>
+        </section>
+
+        <!-- Quote — the image rises out of the sky, then the architects speak over it -->
+        <section class="quote" data-bg="color" aria-labelledby="quote-title">
+          <div class="scroll-area quote-area" data-quote-area>
+            <span class="quote-area__marker" data-bg="dark" data-bg-marker aria-hidden="true"></span>
+            <div class="scroll-area__screen">
+              <div class="quote__media" data-quote-media>
+                <div class="quote__img" data-quote-img>
+                  <x-img name="quote" sizes="100vw" class="cover" alt="Pale stone houses stepping down towards the lake under a high blue sky"></x-img>
+                </div>
+              </div>
+              <h2 id="quote-title" class="visually-hidden">In the architects' words</h2>
+              <blockquote class="quote__text" data-quote-text>
+                <span class="quote__mark" aria-hidden="true">“</span>
+                <p class="display quote__lines" data-quote-lines>We drew the houses low so the ridge could stay taller than any roof. Here the landscape is the architecture.</p>
+                <footer class="label quote__cite" data-quote-cite>The architects<br>Maison Aurelle</footer>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- The place — centred statement between two olive sprigs -->
+        <section class="place" data-bg="light" aria-labelledby="place-title" data-parallax="w">
+          <img class="place__sprig place__sprig--tl" src="/media/deco/sprig-a.svg" alt="" aria-hidden="true" width="600" height="800" data-parallax="ctn-down">
+          <img class="place__sprig place__sprig--br" src="/media/deco/sprig-b.svg" alt="" aria-hidden="true" width="600" height="800" data-parallax="ctn-up">
+          <div class="place__inner" data-reveal="w">
+            <h2 id="place-title" class="label" data-reveal="ctn">The concept</h2>
+            <p class="display place__statement" data-reveal="p">A quiet community of twelve houses, designed around privacy, wellbeing and a slower way of living by the water.</p>
+            <p class="body place__copy" data-reveal="p">Contemporary architecture in warm, local materials, a landscape that is allowed to grow wild, and rooms arranged so that every one of them faces the lake.</p>
+            <svg class="place__glyph" viewBox="0 0 40 48" aria-hidden="true" data-reveal="ctn"><path d="M4 46V20a16 16 0 0 1 32 0v26" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="14" r="1.6" fill="currentColor"/></svg>
+          </div>
+        </section>
+
+        <!-- 5.3 LOCATION — horizontal track (desktop) -->
+        <section class="location" id="location" data-bg="light" aria-labelledby="loc-title">
+          <div class="loc-area" data-loc-area>
+            <div class="loc-screen">
+              <div class="loc-track" data-loc-track data-reveal-scope>
+                <div class="loc-panel loc-panel--title">
+                  <p class="loc-spaced" aria-hidden="true">Est. 2028</p>
+                  <h2 id="loc-title" class="display loc-title">
+                    <span class="loc-title__line" data-drift>The</span>
+                    <span class="loc-title__line" data-drift>quiet</span>
+                    <span class="loc-title__line" data-drift>shore</span>
+                  </h2>
+                </div>
+
+                <div class="loc-panel loc-panel--intro" data-reveal="w">
+                  <p class="script loc-place">Aurelle-sur-Lac</p>
+                  <p class="lede" data-reveal="p">A village of three hundred people, one bakery and a ferry that still runs on a timetable. The lake is deep enough to stay cold in August and clear enough to see the stones at four metres.</p>
+                </div>
+
+                <figure class="loc-panel loc-fig loc-fig--wide" data-wipe>
+                  <div class="loc-fig__media">
+                    <x-img name="loc-lake" sizes="(min-width: 992px) 70vw, 100vw" class="cover"
+                           alt="Layered blue ridgelines above a lake, with mist lying on the water"></x-img>
+                  </div>
+                  <figcaption class="label caption">Morning, looking north</figcaption>
+                </figure>
+
+                <div class="loc-panel loc-panel--between" data-reveal="w">
+                  <h3 class="display loc-between" data-reveal="h">Between ridge and water</h3>
+                  <p class="body" data-reveal="p">Surrounded by walking trails, a sailing club and the old spa town across the water, the houses sit close to everything a slow life needs — and are designed not around arriving, but around returning.</p>
+                  <a class="cta-circle" href="#residences" data-reveal="ctn">
+                    <svg class="cta-circle__ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49"/><circle class="cta-circle__arc" cx="50" cy="50" r="49"/></svg>
+                    <span class="label">See the residences</span>
+                  </a>
+                </div>
+
+                <figure class="loc-panel loc-fig loc-fig--video" data-wipe>
+                  <div class="loc-fig__media">
+                    <video class="cover" data-video muted playsinline loop preload="metadata"
+                           poster="/media/video/water-poster.webp" width="1920" height="1080" aria-hidden="true">
+                      <source src="/media/video/water.webm" type="video/webm">
+                      <source src="/media/video/water.mp4" type="video/mp4">
+                    </video>
+                    <button class="video-toggle label" type="button" data-video-toggle>Pause motion</button>
+                  </div>
+                </figure>
+
+                <figure class="loc-panel loc-fig loc-fig--tall" data-wipe>
+                  <div class="loc-fig__media">
+                    <x-img name="loc-shore" sizes="(min-width: 992px) 32vw, 100vw" class="cover"
+                           alt="A timber jetty running out into pale, misted water between reeds"></x-img>
+                  </div>
+                  <figcaption class="label caption">The residents' jetty</figcaption>
+                </figure>
+
+                <figure class="loc-panel loc-fig loc-fig--wide" data-wipe>
+                  <div class="loc-fig__media">
+                    <x-img name="loc-aerial" sizes="(min-width: 992px) 60vw, 100vw" class="cover"
+                           alt="Aerial view of dense forest meeting the lake along a curved pale shoreline"></x-img>
+                  </div>
+                  <figcaption class="label caption">Eleven hectares, from the air</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Route — a hand-drawn line draws itself; each stop arrives as the line reaches it -->
+        <section class="route" id="distances" data-bg="light" aria-labelledby="route-title">
+          <div class="route__head" data-reveal="w">
+            <h2 id="route-title" class="display route__title">
+              <span class="route__line" data-reveal="h">The lake you wanted</span>
+              <span class="script route__script" data-reveal="ctn">yours</span>
+              <span class="route__line route__line--last" data-reveal="h">this spring</span>
+            </h2>
+          </div>
+          <div class="route__map" data-route>
+            <svg class="route__svg" viewBox="0 0 1400 260" preserveAspectRatio="none" aria-hidden="true">
+              <path data-route-path vector-effect="non-scaling-stroke"
+                    d="M10 230 C120 210 230 190 330 150 C360 138 380 120 350 112 C320 104 330 92 380 90 L520 88 C560 88 560 108 520 110 C480 112 500 124 560 122 C640 118 700 112 760 116 C820 120 860 132 900 110 C940 88 980 70 1010 110 C1040 150 1060 190 1090 150 C1120 100 1160 80 1230 90 C1300 100 1350 106 1390 112"/>
+            </svg>
+            <ol class="route__stops">
+              <li data-at="0.04"><span class="route__dot" aria-hidden="true"></span><span class="label">Rail station</span> <span class="route__min">14 min</span></li>
+              <li data-at="0.24"><span class="route__dot" aria-hidden="true"></span><span class="label">Village square</span> <span class="route__min">6 min</span></li>
+              <li data-at="0.38"><span class="route__dot" aria-hidden="true"></span><span class="label">Ferry pier</span> <span class="route__min">9 min</span></li>
+              <li class="route__home" data-at="0.52"><svg viewBox="0 0 40 48" aria-hidden="true"><path d="M4 46V20a16 16 0 0 1 32 0v26" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="visually-hidden">Maison Aurelle</span></li>
+              <li data-at="0.66"><span class="route__dot" aria-hidden="true"></span><span class="label">Sailing club</span> <span class="route__min">4 min</span></li>
+              <li data-at="0.82"><span class="route__dot" aria-hidden="true"></span><span class="label">Ski lifts</span> <span class="route__min">35 min</span></li>
+              <li data-at="0.97"><span class="route__dot" aria-hidden="true"></span><span class="label">Airport</span> <span class="route__min">55 min</span></li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Valley — clouds part to reveal the country behind the lake -->
+        <section class="valley" data-bg="light" aria-labelledby="valley-title">
+          <div class="scroll-area valley-area" data-valley-area>
+            <div class="scroll-area__screen valley__screen">
+              <div class="valley__img" data-valley-img>
+                <x-img name="valley" sizes="100vw" class="cover" alt="Green foothills rising behind the lake to a line of blue mountains, villages scattered along the valley floor"></x-img>
+              </div>
+              <img class="valley__cloud valley__cloud--l" data-cloud="l" src="/media/deco/cloud-a.webp" alt="" aria-hidden="true" width="2400" height="1500">
+              <img class="valley__cloud valley__cloud--r" data-cloud="r" src="/media/deco/cloud-b.webp" alt="" aria-hidden="true" width="2400" height="1500">
+              <img class="valley__cloud valley__cloud--t" data-cloud="t" src="/media/deco/cloud-a.webp" alt="" aria-hidden="true" width="2400" height="1500">
+              <div class="valley__veil" data-valley-veil aria-hidden="true"></div>
+              <div class="valley__caption" data-reveal="w">
+                <h2 id="valley-title" class="label" data-reveal="ctn">Above the valley</h2>
+                <p class="label valley__sub" data-reveal="ctn">Forty minutes to the peaks</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5.4 AMENITIES — zoom-through hand-off -->
+        <section class="amenities" id="amenities" data-bg="light" aria-labelledby="amen-title">
+          <div class="scroll-area amen-area" data-amen-area>
+            <div class="scroll-area__screen amen-screen">
+              <div class="amen-under" aria-hidden="true">
+                <x-img name="amen-pool" sizes="100vw" class="cover" alt=""></x-img>
+              </div>
+              <div class="amen-over" data-amen-over>
+                <div class="amen-head" data-reveal="w">
+                  <h2 id="amen-title" class="label" data-reveal="line">Held in common</h2>
+                  <p class="body" data-reveal="p">Four rooms shared by twelve households, and never more.</p>
+                </div>
+                <ul class="amen-grid" data-amen-grid>
+                  <li class="amen-card" data-reveal="ctn" data-reveal-first>
+                    <figure>
+                      <div class="amen-card__media"><x-img name="amen-spa" sizes="(min-width: 992px) 20vw, 50vw" class="cover" alt="A sauna lined in vertical oak slats with a low bench"></x-img></div>
+                      <figcaption><h3 class="label">Sauna</h3><p class="body">Oak and river stone</p></figcaption>
+                    </figure>
+                  </li>
+                  <li class="amen-card" data-amen-focus data-reveal="ctn" data-reveal-first>
+                    <figure>
+                      <div class="amen-card__media"><x-img name="amen-pool" sizes="(min-width: 992px) 20vw, 50vw" class="cover" alt="An indoor pool of pale blue water beneath a window onto the ridge"></x-img></div>
+                      <figcaption><h3 class="label">Pool hall</h3><p class="body">25 metres, spring fed</p></figcaption>
+                    </figure>
+                  </li>
+                  <li class="amen-card" data-reveal="ctn" data-reveal-first>
+                    <figure>
+                      <div class="amen-card__media"><x-img name="amen-library" sizes="(min-width: 992px) 20vw, 50vw" class="cover" alt="Floor-to-ceiling shelves of books in a dark timber library"></x-img></div>
+                      <figcaption><h3 class="label">Library</h3><p class="body">Four thousand volumes</p></figcaption>
+                    </figure>
+                  </li>
+                  <li class="amen-card" data-reveal="ctn" data-reveal-first>
+                    <figure>
+                      <div class="amen-card__media"><x-img name="amen-garden" sizes="(min-width: 992px) 20vw, 50vw" class="cover" alt="A gravel path running through soft, layered planting towards the hills"></x-img></div>
+                      <figcaption><h3 class="label">Walled garden</h3><p class="body">Kitchen beds and orchard</p></figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Residences — tabs, floor-plan modal, scrubbed 1.15 → 1 image -->
+        <section class="residences" id="residences" data-bg="light" aria-labelledby="res-title">
+          <div class="res-grid">
+            <div class="res-copy" data-reveal="w">
+              <h2 id="res-title" class="label" data-reveal="line">The residences</h2>
+              <div class="tabs" role="tablist" aria-label="Residence types" data-tabs data-reveal="ctn">
+                <button class="tabs__tab" role="tab" type="button" id="tab-shore" aria-selected="true" aria-controls="panel-shore">Shore</button>
+                <button class="tabs__tab" role="tab" type="button" id="tab-garden" aria-selected="false" aria-controls="panel-garden" tabindex="-1">Garden</button>
+                <button class="tabs__tab" role="tab" type="button" id="tab-ridge" aria-selected="false" aria-controls="panel-ridge" tabindex="-1">Ridge</button>
+              </div>
+              <div class="tabs__panel" role="tabpanel" id="panel-shore" aria-labelledby="tab-shore" tabindex="0" data-reveal="ctn">
+                <dl class="specs">
+                  <div><dt class="label">Bedrooms</dt><dd>Three</dd></div>
+                  <div><dt class="label">Interior</dt><dd>214 m²</dd></div>
+                  <div><dt class="label">Terrace</dt><dd>60 m²</dd></div>
+                  <div><dt class="label">Frontage</dt><dd>18 m of shore</dd></div>
+                </dl>
+                <p class="body">Single-storey houses on the waterline, with a boathouse cut into the bank below.</p>
+              </div>
+              <div class="tabs__panel" role="tabpanel" id="panel-garden" aria-labelledby="tab-garden" tabindex="0" hidden>
+                <dl class="specs">
+                  <div><dt class="label">Bedrooms</dt><dd>Four</dd></div>
+                  <div><dt class="label">Interior</dt><dd>268 m²</dd></div>
+                  <div><dt class="label">Garden</dt><dd>420 m², walled</dd></div>
+                  <div><dt class="label">Aspect</dt><dd>South-west</dd></div>
+                </dl>
+                <p class="body">Two storeys set back behind the walnut line, each with its own walled garden.</p>
+              </div>
+              <div class="tabs__panel" role="tabpanel" id="panel-ridge" aria-labelledby="tab-ridge" tabindex="0" hidden>
+                <dl class="specs">
+                  <div><dt class="label">Bedrooms</dt><dd>Five</dd></div>
+                  <div><dt class="label">Interior</dt><dd>340 m²</dd></div>
+                  <div><dt class="label">Terrace</dt><dd>110 m²</dd></div>
+                  <div><dt class="label">Elevation</dt><dd>38 m above the lake</dd></div>
+                </dl>
+                <p class="body">The highest houses, stepped into the slope so every floor has a view over the roofs below.</p>
+              </div>
+              <button class="btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="plans" data-modal-open="plans" data-reveal="ctn">View floor plans</button>
+            </div>
+            <figure class="res-fig">
+              <div class="media res-fig__media">
+                <div class="zoom" data-zoom>
+                  <x-img name="bedroom-view" sizes="(min-width: 992px) 50vw, 100vw" class="cover"
+                         alt="A pale bedroom with a low bed facing a wide window onto green hills"></x-img>
+                </div>
+              </div>
+              <figcaption class="label caption">Principal bedroom, Shore residence</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- 5.5 ARCHITECTURE — clip-path curtains as a camera (nothing else animates) -->
+        <section class="arch" id="architecture" data-bg="dark" aria-labelledby="arch-title">
+          <div class="scroll-area arch-area" data-arch-area>
+            <span class="arch-area__marker" data-bg="light" data-bg-marker aria-hidden="true"></span>
+            <div class="scroll-area__screen arch-screen">
+              <div class="arch-frame" data-arch-frame>
+                <div class="arch-half arch-half--l" data-arch-half="l">
+                  <x-img name="arch-facade" sizes="100vw" class="cover"
+                         alt="A symmetrical stone facade with seven tall arched openings"></x-img>
+                </div>
+                <div class="arch-half arch-half--r" data-arch-half="r" aria-hidden="true">
+                  <x-img name="arch-facade" sizes="100vw" class="cover" alt=""></x-img>
+                </div>
+                <span class="arch-motif arch-motif--l" data-arch-motif="l" aria-hidden="true"></span>
+                <span class="arch-motif arch-motif--r" data-arch-motif="r" aria-hidden="true"></span>
+                <h2 id="arch-title" class="display arch-title">Architecture</h2>
+              </div>
+              <div class="arch-copy">
+                <p class="label">Stone, oak and lime</p>
+                <p class="body">One stone, one module, one arch — repeated until it becomes a place.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interiors — rises to meet the architecture camera (scale 0.75 → 1) -->
+        <section class="interiors" data-bg="light" aria-labelledby="interiors-title" data-arch-next>
+          <figure class="interiors__fig">
+            <x-img name="interior-living" sizes="100vw" class="cover"
+                   alt="A living room with a long linen sofa before floor-to-ceiling glass and the lake beyond"></x-img>
+          </figure>
+          <div class="interiors__grid">
+            <div class="interiors__copy" data-reveal="w">
+              <h2 id="interiors-title" class="label" data-reveal="line">Interiors</h2>
+              <p class="lede" data-reveal="p">Lime plaster that holds the afternoon light, oak that darkens underfoot, and glass set deep enough in the wall that the view arrives framed.</p>
+            </div>
+            <figure class="interiors__video" data-reveal="line">
+              <video class="cover" data-video muted playsinline loop preload="metadata"
+                     poster="/media/video/light-wall-poster.webp" width="1920" height="1080" aria-hidden="true">
+                <source src="/media/video/light-wall.webm" type="video/webm">
+                <source src="/media/video/light-wall.mp4" type="video/mp4">
+              </video>
+              <button class="video-toggle label" type="button" data-video-toggle>Pause motion</button>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Closing display — the card the page shrinks into -->
+        <section class="closing" data-bg="color" aria-labelledby="closing-title">
+          <div class="closing__inner" data-reveal="w">
+            <h2 id="closing-title" class="display" data-reveal="h">Come to the water</h2>
+          </div>
+        </section>
+
+      </main>
+    </div>
+    <!-- The page sticks and shrinks into a card over this spacer, then scrolls away -->
+    <div class="footer-spacer" data-footer data-bg="dark" aria-hidden="true"></div>
+  </div>
+
+  <!-- 5.6 FOOTER — the page closes on itself -->
+  <footer class="footer" id="enquire" data-bg="dark" data-footer-block aria-labelledby="footer-title">
+    <div class="footer-inner" data-footer-inner>
+      <svg class="footer__glyph" viewBox="0 0 40 48" aria-hidden="true" data-footer-reveal><path d="M4 46V20a16 16 0 0 1 32 0v26" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="14" r="1.6" fill="currentColor"/></svg>
+      <h2 id="footer-title" class="visually-hidden">Private viewings</h2>
+      <a class="display footer__big" href="mailto:viewings@maison-aurelle.example" data-footer-reveal>By appointment</a>
+      <div class="footer__office" data-footer-reveal>
+        <p class="label footer__muted">Sales suite</p>
+        <p class="label">Quai des Pêcheurs 4<br>Aurelle-sur-Lac</p>
+        <p class="label"><a href="mailto:viewings@maison-aurelle.example">viewings@maison-aurelle.example</a></p>
+      </div>
+      <div class="footer__base" data-footer-reveal>
+        <div>
+          <p class="label">Maison Aurelle.</p>
+          <p class="label footer__muted">© 2026 — a fictional development</p>
+        </div>
+        <nav aria-label="Footer">
+          <ul class="footer__links">
+            <li><a class="label" href="#location">The shore</a></li>
+            <li><a class="label" href="#residences">Residences</a></li>
+            <li><a class="label" href="#architecture">Architecture</a></li>
+          </ul>
+        </nav>
+        <p class="label footer__muted">Imagery: placeholder plates</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floor plans modal -->
+  <dialog class="modal" id="plans" aria-labelledby="plans-title" data-lenis-prevent>
+    <div class="modal__inner">
+      <header class="modal__head">
+        <h3 id="plans-title" class="label">Floor plans — <span data-plan-name>Shore</span></h3>
+        <button class="modal__close label" type="button" data-modal-close>Close <span aria-hidden="true">×</span></button>
+      </header>
+      <div class="modal__plans" data-plans></div>
+      <p class="body modal__note">Indicative only. Full drawings are shared at viewing.</p>
+    </div>
+  </dialog>
+</body>
+</html>

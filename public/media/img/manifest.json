@@ -1,0 +1,206 @@
+{
+  "hero": {
+    "width": 5120,
+    "height": 2880,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "loc-lake": {
+    "width": 3840,
+    "height": 1646,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "loc-shore": {
+    "width": 3072,
+    "height": 3840,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "loc-aerial": {
+    "width": 3840,
+    "height": 2560,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "amen-pool": {
+    "width": 3072,
+    "height": 3840,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "amen-spa": {
+    "width": 3072,
+    "height": 3840,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "amen-library": {
+    "width": 3072,
+    "height": 3840,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "amen-garden": {
+    "width": 3072,
+    "height": 3840,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "arch-facade": {
+    "width": 3840,
+    "height": 2160,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "interior-living": {
+    "width": 3840,
+    "height": 2160,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "detail-material": {
+    "width": 3840,
+    "height": 2560,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "bedroom-view": {
+    "width": 3840,
+    "height": 2560,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "hero-night": {
+    "width": 5120,
+    "height": 2880,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "slide-terrace": {
+    "width": 3840,
+    "height": 2560,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "slide-dining": {
+    "width": 3840,
+    "height": 2560,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "quote": {
+    "width": 3840,
+    "height": 2160,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  },
+  "valley": {
+    "width": 3840,
+    "height": 2160,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400,
+      3840
+    ],
+    "placeholder": true
+  }
+}

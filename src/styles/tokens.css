@@ -1,0 +1,71 @@
+:root {
+  /* Four brand colours + one ink + one paper. Nothing else. */
+  --plum: #340C24;
+  --sky: #B5CEDB;
+  --blush: #F8BBCB;
+  --paper: #F3F3EC;
+  --ink: #17233B;
+
+  /* Opacity ramps — every hairline and muted label is built from these, never a grey. */
+  --ink-60: #17233B99;
+  --ink-30: #17233B4D;
+  --ink-10: #17233B1A;
+  --ink-05: #17233B0D;
+  --paper-60: #F3F3EC99;
+  --paper-30: #F3F3EC4D;
+  --paper-10: #F3F3EC1A;
+  --paper-05: #F3F3EC0D;
+
+  /* Type */
+  --font-display: "Bodoni Moda", "Bodoni Fallback", "Didot", serif;
+  --font-script: "Pinyon Script", "Script Fallback", cursive;
+  --font-ui: "Archivo", "Archivo Fallback", system-ui, sans-serif;
+
+  --display-size: clamp(3rem, 13vw, 13rem);
+  --label-size: clamp(11px, 0.72rem + 0.1vw, 13px);
+  --body-size: clamp(16px, 0.95rem + 0.15vw, 18px);
+  --lede-size: clamp(1.25rem, 1rem + 1vw, 2rem);
+
+  /* Space */
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+  --section-pad: clamp(6rem, 14vh, 12rem);
+
+  /* Timing — mirrors src/core/timing.js for the few CSS transitions */
+  --dur-s: 0.4s;
+  --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Set by JS */
+  --scrollbar-w: 0px;
+  --lock-pad: 0px;
+  --progress: 0%;
+
+  /* Current ground → focus ring contrast */
+  --focus: var(--ink);
+}
+
+/* Metric-matched fallbacks (measured against the web fonts in Chrome) keep the
+   swap from shifting layout. */
+@font-face {
+  font-family: "Bodoni Fallback";
+  src: local("Times New Roman"), local("Times");
+  size-adjust: 110%;
+  ascent-override: 102.8%;
+  descent-override: 36.4%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Archivo Fallback";
+  src: local("Arial"), local("Helvetica");
+  size-adjust: 99%;
+  ascent-override: 88.7%;
+  descent-override: 21.2%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Script Fallback";
+  src: local("Georgia");
+  size-adjust: 85.8%;
+  ascent-override: 100.3%;
+  descent-override: 44.3%;
+  line-gap-override: 0%;
+}

@@ -1,0 +1,75 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--plum);
+}
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+
+body {
+  margin: 0;
+  background: var(--plum);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--body-size);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+/* Scroll lock (preloader, modal): the scrollbar's width is measured into
+   --scrollbar-w and replaced with padding so nothing jumps sideways. */
+html.is-locked { overflow: hidden; }
+html.is-locked body { padding-right: var(--scrollbar-w); }
+html.is-locked { --lock-pad: var(--scrollbar-w); }
+
+img, video, svg, picture { display: block; max-width: 100%; }
+img, video { height: auto; }
+figure { margin: 0; }
+p, h1, h2, h3, dl, dd, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+
+.cover { width: 100%; height: 100%; object-fit: cover; }
+picture:has(> .cover) { width: 100%; height: 100%; }
+
+/* Focus: blush halo + ink/paper ring — legible on plum, paper, sky and photography */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--blush);
+  border-radius: 2px;
+}
+[data-bg="dark"], .footer, .modal, .preloader { --focus: var(--paper); }
+
+.skip-link {
+  position: fixed;
+  left: var(--gutter);
+  top: var(--gutter);
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transform: translateY(-200%);
+}
+.skip-link:focus-visible { transform: none; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+::selection { background: var(--blush); color: var(--ink); }

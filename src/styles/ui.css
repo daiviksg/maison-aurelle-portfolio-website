@@ -1,0 +1,167 @@
+/* Fixed UI swaps between three themes as grounds pass beneath it. Registering the
+   custom property lets the colour interpolate, so there is never a visible flip. */
+@property --ui-fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #F3F3EC;
+}
+
+:root { --mark-w: clamp(64px, 6.5vw, 104px); }
+
+[data-theme] {
+  color: var(--ui-fg);
+  transition: --ui-fg var(--dur-s) var(--ease-out), color var(--dur-s) var(--ease-out);
+}
+.theme_on-light { --ui-fg: var(--ink); --ui-dim: var(--ink-10); --focus: var(--ink); }
+.theme_on-color { --ui-fg: var(--ink); --ui-dim: var(--ink-10); --focus: var(--ink); }
+.theme_on-dark  { --ui-fg: var(--paper); --ui-dim: var(--paper-30); --focus: var(--paper); }
+
+.ui {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--gutter);
+  padding-right: calc(var(--gutter) + var(--lock-pad));
+  pointer-events: none;
+}
+.ui > * { pointer-events: auto; }
+
+/* Corner mark — radially symmetric so constant rotation reads as motion. */
+.ui-mark {
+  display: block;
+  width: var(--mark-w);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.ui-mark__svg { width: 100%; height: 100%; overflow: visible; }
+.ui-mark__ring { transform-box: view-box; transform-origin: 60px 60px; will-change: transform; }
+.ui-mark__text {
+  font-family: var(--font-ui);
+  font-size: 9.2px;
+  font-weight: 700;
+  font-stretch: 125%;
+  letter-spacing: 0.05em;
+  fill: currentColor;
+}
+.ui-mark__glyph { stroke: currentColor; }
+.ui-mark__dot { fill: var(--blush); }
+
+/* Right: one display-set feature link, two quiet labels beneath. */
+.ui-nav { display: flex; flex-direction: column; align-items: flex-end; gap: 1.4rem; text-align: right; }
+.ui-nav__feature {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.9vw, 2.1rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.ui-nav__feature span {
+  display: block;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+  transition: text-decoration-color var(--dur-s) var(--ease-out);
+}
+.ui-nav__feature:hover span { text-decoration-color: var(--blush); }
+.ui-nav__links { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; }
+.ui-nav__links a {
+  display: inline-block;
+  padding: 0.2rem 0;
+  letter-spacing: 0.14em;
+  background-image: linear-gradient(var(--blush), var(--blush));
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur-s) var(--ease-out);
+}
+.ui-nav__links a:hover { background-size: 100% 1px; }
+@media (max-width: 991px) {
+  .ui-nav__links { display: none; }
+}
+
+/* Left rail under the mark: two-digit counter, draggable rail, and a scroll cue that
+   turns into "to top" at the end. One ScrollTrigger writes --progress; CSS does the rest. */
+.ui-progress {
+  position: fixed;
+  z-index: 100;
+  left: calc(var(--gutter) + var(--mark-w) / 2);
+  top: calc(var(--gutter) + var(--mark-w) + 7vh);
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+.ui-progress__count { min-width: 3ch; text-align: center; font-variant-numeric: tabular-nums; }
+.ui-progress__rail {
+  --rail-h: 30vh;
+  position: relative;
+  width: 1px;
+  height: var(--rail-h);
+  background: var(--ui-dim);
+}
+.ui-progress__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--ui-fg);
+  clip-path: inset(0 0 calc(100% - var(--progress)) 0);
+  clip-path: rect(0 100% var(--progress) 0);
+}
+.ui-progress__thumb {
+  position: absolute;
+  left: 50%;
+  top: 0; /* position = var(--progress), applied as a transform so it never shifts layout */
+  width: 11px;
+  height: 11px;
+  transform: translate(-50%, calc(var(--progress-n, 0) * var(--rail-h) - 50%));
+  border-radius: 50%;
+  background: var(--blush);
+  box-shadow: 0 0 0 1px var(--ui-fg);
+  cursor: grab;
+  touch-action: none;
+}
+.ui-progress__thumb::before { content: ""; position: absolute; inset: -14px; }
+.ui-progress__thumb.is-dragging { cursor: grabbing; }
+
+.ui-cue {
+  position: fixed;
+  z-index: 100;
+  left: calc(var(--gutter) + var(--mark-w) / 2);
+  bottom: calc(var(--gutter) * 1.5);
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  letter-spacing: 0.2em;
+}
+.ui-cue__text { writing-mode: vertical-rl; rotate: 180deg; }
+.ui-cue__arrow { position: relative; width: 1px; height: 3.25rem; background: currentColor; transition: rotate var(--dur-s) var(--ease-out); }
+.ui-cue__arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  translate: -50% 0;
+  rotate: 45deg;
+}
+.ui-cue.is-top .ui-cue__arrow { rotate: 180deg; }
+
+@media (max-width: 991px) { .ui-progress, .ui-cue { display: none; } }
+
+/* Fixed UI waits for web fonts (it sits under the curtain anyway), so the swap can't shift it. */
+html.js:not(.fonts-ready) .ui,
+html.js:not(.fonts-ready) .ui-progress,
+html.js:not(.fonts-ready) .ui-cue,
+/* …and so does all type under the curtain: nothing is laid out in a fallback face and then moved. */
+html.js:not(.fonts-ready) .preloader__lockup,
+html.js:not(.fonts-ready) .preloader__tag,
+html.js:not(.fonts-ready) main { visibility: hidden; }
